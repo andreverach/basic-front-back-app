@@ -36,15 +36,15 @@ async function showHeros() {
       },
     });
     console.log('esperando respuesta', response);
-    const heros = await response.json();
-    console.log('respuesta obtenida', heros);
+    const pokemons = await response.json();
+    console.log('respuesta obtenida', pokemons);
     let filas = "";
-    for (let hero of heros.results) {
+    for (let pokemon of pokemons.results) {
       filas += `
               <tr>
                   <td></td>                 
-                  <td>${hero.name}</td>
-                  <td></td>
+                  <td>${pokemon.name}</td>
+                  <td><a href="${pokemon.url}">Más información</a></td>
                   <td></td>
                   <td></td>
               </tr>
